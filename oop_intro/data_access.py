@@ -35,12 +35,12 @@ from datetime import datetime
 class User2:
     def __init__(self, username, email, isAdmin=False):
         self.username = username
-        self._email = email
+        self._email = email # email attribute is made private by renaming it with a undescore prefix
         self.isAdmin = isAdmin
 
     # convention: get + attr name
     def getEmail(self):
-        # Advantage of getter: if we need to make changes to way data is accessed, we can do it just here -- not everywhere we are accessing email
+        # Advantage of getter: if we need to make changes to the way data is accessed, we can do it just here -- not everywhere we are accessing email
         if self.isAdmin:
             print(f"Email accessed at {datetime.now()}")
             return self._email
