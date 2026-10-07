@@ -26,7 +26,7 @@ user1.email = "danoutlook.com"  # PROBLEM: we can set email to anything!
 print(user1.email)
 
 # SOLUTION: we need a way of controlling the way we can get and set data. Let me show you two ways: one traditional "Java"-style, 
-# and one the more modern "Python" (and C#) style.
+# and one more modern "Python" (and C#) style.
 
 # 1. The traditional way: make the data private and use getters and setters:
 
@@ -62,15 +62,19 @@ user1.setEmail("dan@outlook.com")
 print(user1.getEmail())
 
 # Python’s Take on Access Modifiers
-# Unlike languages such as Java or C++, which enforce strict access control (like private or protected), Python takes a more relaxed approach. In Python:
+# Unlike languages such as Java or C++, which enforce strict access control (like private or protected), 
+# Python takes a more relaxed approach. In Python:
 
-# A single underscore (_) before a name (e.g., _attribute) is a convention indicating that something is intended for internal use within the class or module. 
+# A single underscore (_) before a name (e.g., _attribute) is a convention indicating that something 
+# is intended for internal use within the class or module. 
 # This means it’s not part of the public API, and external code shouldn’t access it directly.
-# However, Python doesn’t enforce this restriction. The attribute or method is still accessible from outside the class, but it signals to developers that 
+# However, Python doesn’t enforce this restriction. The attribute or method is still accessible from outside the class, 
+# but it signals to developers that 
 # it’s meant to be “protected” or “internal.”
 
 # The “Consenting Adults” Philosophy
-# Guido van Rossum’s "consenting adults" philosophy highlights Python’s emphasis on developer responsibility rather than strict rules. 
+# Guido van Rossum’s "consenting adults" philosophy highlights Python’s emphasis on developer 
+# responsibility rather than strict rules. 
 # This philosophy suggests that:
 
 # Developers are trusted to respect the convention of not accessing underscore-prefixed attributes or methods.
