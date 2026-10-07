@@ -25,7 +25,8 @@ user1.email = "danoutlook.com"  # PROBLEM: we can set email to anything!
 
 print(user1.email)
 
-# SOLUTION: we need a way of controlling the way we can get and set data. Let me show you two ways: one traditional "Java"-style, and one the more modern "Python" (and C#) style.
+# SOLUTION: we need a way of controlling the way we can get and set data. Let me show you two ways: one traditional "Java"-style, 
+# and one the more modern "Python" (and C#) style.
 
 # 1. The traditional way: make the data private and use getters and setters:
 
@@ -35,12 +36,13 @@ from datetime import datetime
 class User2:
     def __init__(self, username, email, isAdmin=False):
         self.username = username
-        self._email = email # email attribute is made private by renaming it with a undescore prefix
+        self._email = email # email attribute is made private by renaming it with an underscore prefix
         self.isAdmin = isAdmin
 
     # convention: get + attr name
     def getEmail(self):
-        # Advantage of getter: if we need to make changes to the way data is accessed, we can do it just here -- not everywhere we are accessing email
+        # Advantage of getter: if we need to make changes to the way data is accessed, 
+        # we can do it just here -- not everywhere we are accessing email
         if self.isAdmin:
             print(f"Email accessed at {datetime.now()}")
             return self._email
@@ -62,18 +64,22 @@ print(user1.getEmail())
 # Python’s Take on Access Modifiers
 # Unlike languages such as Java or C++, which enforce strict access control (like private or protected), Python takes a more relaxed approach. In Python:
 
-# A single underscore (_) before a name (e.g., _attribute) is a convention indicating that something is intended for internal use within the class or module. This means it’s not part of the public API, and external code shouldn’t access it directly.
-# However, Python doesn’t enforce this restriction. The attribute or method is still accessible from outside the class, but it signals to developers that it’s meant to be “protected” or “internal.”
+# A single underscore (_) before a name (e.g., _attribute) is a convention indicating that something is intended for internal use within the class or module. 
+# This means it’s not part of the public API, and external code shouldn’t access it directly.
+# However, Python doesn’t enforce this restriction. The attribute or method is still accessible from outside the class, but it signals to developers that 
+# it’s meant to be “protected” or “internal.”
 
 # The “Consenting Adults” Philosophy
-# Guido van Rossum’s "consenting adults" philosophy highlights Python’s emphasis on developer responsibility rather than strict rules. This philosophy suggests that:
+# Guido van Rossum’s "consenting adults" philosophy highlights Python’s emphasis on developer responsibility rather than strict rules. 
+# This philosophy suggests that:
 
 # Developers are trusted to respect the convention of not accessing underscore-prefixed attributes or methods.
-# Access is not prevented, as Python assumes that developers will act responsibly and won’t misuse or access “protected” members unless absolutely necessary.
+# Access is not prevented, as Python assumes that developers will act responsibly and won’t misuse 
+# or access “protected” members unless absolutely necessary.
 
 # 2. Using properties
 
-# This is the recommended approach in python. let's see why...
+# This is the recommended approach in Python. Let's see why...
 
 
 class User3:
@@ -110,7 +116,8 @@ print(user1.email)
 
 # static attributes and methods
 
-# Let's say that we want to keep track of the total number of user objects that have been created. To do that, we can create a "static" attribute on the User class:
+# Let's say that we want to keep track of the total number of user objects that have been created. 
+# To do that, we can create a "static" attribute on the User class:
 
 
 class User4:
